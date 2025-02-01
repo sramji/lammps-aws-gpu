@@ -1,0 +1,39 @@
+# LAMMPS output and checkpoint files
+*.restart
+*.lammpstrj
+*.data
+*.log
+
+# AWS and deployment files
+.aws/
+*.pem
+
+# Environment and build files
+.env
+build/
+*.o
+*.so
+*.pyc
+__pycache__/
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Temporary and backup files
+tmp/
+temp/
+*.bak
+*.tmp
+
+# Container and build artifacts
+*.tar
+*.gz
+*.zip
+
+# Local test files
+test/output/
+local_tests/
