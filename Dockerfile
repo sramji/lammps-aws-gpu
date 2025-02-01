@@ -2,7 +2,8 @@ FROM nvidia/cuda:12.0.1-devel-ubuntu22.04
 
 # Environment variables
 ENV LAMMPS_VERSION=stable_23Jun2022 \
-    CUDA_ARCH=sm_80 \
+    # Support both T4 (sm_75) and A100 (sm_80)
+    CUDA_ARCH="sm_75 sm_80" \
     DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
@@ -36,6 +37,7 @@ RUN mkdir build \
         -D PKG_GPU=yes \
         -D PKG_KOKKOS=yes \
         -D Kokkos_ENABLE_CUDA=yes \
+        -D Kokkos_ARCH_TURING75=yes \
         -D Kokkos_ARCH_AMPERE80=yes \
         -D PKG_MOLECULE=yes \
         -D PKG_KSPACE=yes \

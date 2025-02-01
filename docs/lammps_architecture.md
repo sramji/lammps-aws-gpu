@@ -42,16 +42,18 @@
 ### Compute Costs (100 hours/week)
 - **Spot Instance**: ~$32.77/hour × 100 hours = $3,277/week
   - Potential savings: 60-90% off On-Demand
-  - Weekly cost with spot: $327.70 - $1,310.80
+  - Weekly cost with spot:
+    * 90% savings: $327.70
+    * 60% savings: $1,310.80
 - **On-Demand Failover**: ~$32.77/hour (used only during spot interruptions)
   - Estimated 5% usage: $163.85/week
 
 ### Storage Costs
 - **S3 Storage**: 
-  - 10TB at $0.023/GB/month = $230/month
+  - 10TB at $0.023/GB/month = $235.52/month
   - Data transfer: ~$0.09/GB (out)
 - **EBS Volume**: 
-  - 1TB gp3: $0.08/GB/month = $80/month
+  - 1TB gp3: $0.08/GB/month = $81.92/month
   - IOPS: Included in base price
 
 ### Additional Costs
@@ -59,10 +61,17 @@
 - **Data Transfer**: 
   - S3 to EC2: Free
   - EC2 to Internet: $0.09/GB
+- **Estimated Monthly Overhead**: ~$100 (depends on actual usage)
 
 ### Total Monthly Cost Estimate
-- **Best Case** (90% spot savings): $2,100 - $2,500
-- **Worst Case** (60% spot savings): $4,000 - $4,500
+- **Best Case** (90% spot savings):
+  - Compute: $2,113.67 (spot + failover)
+  - Storage: $317.44 (S3 + EBS)
+  - Total Range: $2,300 - $2,600
+- **Worst Case** (60% spot savings):
+  - Compute: $6,341.00 (spot + failover)
+  - Storage: $317.44 (S3 + EBS)
+  - Total Range: $6,300 - $6,800
 
 ## Implementation Details
 

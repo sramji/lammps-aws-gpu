@@ -22,7 +22,13 @@
 ## Pending Implementation
 
 ### Phase 1: Initial Setup
-❌ Container build and testing
+🔄 AWS GPU Quota Requests:
+  - G instances: Requested on 2025-01-29 (CASE_OPENED)
+  - P4d instances: Requested on 2025-02-01 (PENDING)
+
+❌ Container build and testing (Two-phase approach):
+  1. Initial development on G4dn (NVIDIA T4)
+  2. Production deployment on P4d (NVIDIA A100)
 ❌ ECR repository creation
 ❌ Container push to ECR
 ❌ VPC and networking setup

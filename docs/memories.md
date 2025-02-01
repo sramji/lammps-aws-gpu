@@ -1,4 +1,23 @@
 # LAMMPS Infrastructure Project Memories
+# Project Development Decisions and Requirements
+
+## GPU Infrastructure Strategy (2025-02-01)
+
+### Decision
+Implemented a two-phase GPU development approach:
+1. Initial Development: G4dn instances (NVIDIA T4)
+   - More readily available
+   - Cost-effective for development and testing
+   - Suitable for validating container and scripts
+
+2. Production Deployment: P4d instances (NVIDIA A100)
+   - Higher performance for production workloads
+   - Better suited for large-scale molecular simulations
+
+### Implementation
+- Modified Dockerfile to support both GPU architectures (T4: sm_75, A100: sm_80)
+- Submitted quota requests for both instance types
+- Container will automatically optimize for available GPU architecture
 
 ## Requirements Gathered
 
